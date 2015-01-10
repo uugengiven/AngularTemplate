@@ -1,8 +1,10 @@
-﻿var AngularTemplate = angular.module('AngularTemplate', ['ngRoute']);
+﻿var AngularTemplate = angular.module('AngularTemplate', ['ngRoute', 'ui.bootstrap']);
 
 AngularTemplate.controller('LandingPageController', LandingPageController);
 
-var configFunction = function ($routeProvider) {
+var configFunction = function ($routeProvider, $httpProvider, $locationProvider) {
+    $locationProvider.hashPrefix('!').html5Mode(true);
+
     $routeProvider.
         when('/routeTemplate', {
             templateUrl: 'Template/'
@@ -11,6 +13,6 @@ var configFunction = function ($routeProvider) {
             templateUrl: 'Template/one'
         });
 }
-configFunction.$inject = ['$routeProvider'];
+configFunction.$inject = ['$routeProvider', '$httpProvider', '$locationProvider'];
 
 AngularTemplate.config(configFunction);

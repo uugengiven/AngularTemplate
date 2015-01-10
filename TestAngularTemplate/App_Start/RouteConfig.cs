@@ -14,10 +14,19 @@ namespace TestAngularTemplate
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "routeTemplate",
+                url: "Template",
+                defaults: new { controller = "Template", action = "Index" });
+
+            routes.MapRoute(
+                name: "routeOne",
+                url: "Template/One",
+                defaults: new { controller = "Template", action = "One" });
+
+            routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+                url: "{*url}",
+                defaults: new { controller = "Home", action = "Index" });
         }
     }
 }
