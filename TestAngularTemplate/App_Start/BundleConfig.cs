@@ -10,6 +10,7 @@ namespace TestAngularTemplate
         {
             bundles.Add(new ScriptBundle("~/bundles/AngularTemplate")
                 .IncludeDirectory("~/Scripts/Controllers", "*.js")
+                .IncludeDirectory("~/Scripts/Factories", "*.js")
                 .Include("~/Scripts/AngularTemplate.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

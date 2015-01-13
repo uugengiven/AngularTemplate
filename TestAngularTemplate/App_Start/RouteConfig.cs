@@ -24,6 +24,16 @@ namespace TestAngularTemplate
                 defaults: new { controller = "Template", action = "One" });
 
             routes.MapRoute(
+                name: "Login",
+                url: "Account/Login",
+                defaults: new { controller = "Account", action = "Login" });
+
+            routes.MapRoute(
+                name: "Register",
+                url: "Account/Register",
+                defaults: new { controller = "Account", action = "Register" });
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{*url}",
                 defaults: new { controller = "Home", action = "Index" });
